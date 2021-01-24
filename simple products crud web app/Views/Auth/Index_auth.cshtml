@@ -1,0 +1,42 @@
+﻿@model IEnumerable<simple_products_crud_web_app.Models.AuthorDependency>
+
+@{
+    ViewData["Title"] = "Index_auth";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index_auth</h1>
+
+<p>
+    <a asp-action="Create_auth">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthDesc)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthDesc)
+            </td>
+            <td>
+                <a asp-action="Edit_auth" asp-route-id="@item.AuthId">Edit</a> |
+                <a asp-action="Details_auth" asp-route-id="@item.AuthId">Details</a> |
+                <a asp-action="Delete_auth" asp-route-id="@item.AuthId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

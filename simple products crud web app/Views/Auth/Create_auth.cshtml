@@ -1,0 +1,39 @@
+﻿@model simple_products_crud_web_app.Models.AuthorDependency
+
+@{
+    ViewData["Title"] = "Create_auth";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create_auth</h1>
+
+<h4>AuthorDependency</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create_auth">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AuthName" class="control-label"></label>
+                <input asp-for="AuthName" class="form-control" />
+                <span asp-validation-for="AuthName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AuthDesc" class="control-label"></label>
+                <input asp-for="AuthDesc" class="form-control" />
+                <span asp-validation-for="AuthDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index_auth">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

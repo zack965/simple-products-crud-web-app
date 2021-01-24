@@ -1,0 +1,31 @@
+﻿@model simple_products_crud_web_app.Models.AuthorDependency
+
+@{
+    ViewData["Title"] = "Details_auth";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details_auth</h1>
+
+<div>
+    <h4>AuthorDependency</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AuthName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AuthName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AuthDesc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AuthDesc)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit_auth" asp-route-id="@Model.AuthId">Edit</a> |
+    <a asp-action="Index_auth">Back to List</a>
+</div>
